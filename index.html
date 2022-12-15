@@ -1,0 +1,49 @@
+<html>
+      <head>
+            <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	  <title>Collatz</title>
+		
+	  <script>
+			"use strict";
+
+			function fcalc() {
+			
+			let i = document.getElementById("idZahl").value;
+			let x = 1;
+			let ihalb = i/2;
+			let ausgabe= i ;
+			let count = 1;
+
+			while (i != x) {
+	
+			
+			if(i%2==0){
+			i = i / 2;
+			}
+			else{
+			i = 3 * i + 1;
+			}
+			ausgabe= ausgabe + " - > " + i ;
+
+			count++
+
+			}	
+
+			ausgabe = ausgabe + "<p></p>" + "Anzahl der Berechnungen: " + count;
+			document.getElementById("idAusgabe").innerHTML = ausgabe;
+			}
+			
+
+	  </script>
+	  </head>
+
+	  <body>
+		<h1>Collatz-Folge</h1>
+		Collatz Zahl:<input id="idZahl" type="text" value="28">
+		<button onclick="fcalc();">Collatz!</button>
+		<br> </br>
+		<div id="idAusgabe">Hier kommt die Collatz-Folge...</div>
+	
+
+       </body>
+</html>
